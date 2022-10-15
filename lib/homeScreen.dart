@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:udf_architecture/HomeViewModel.dart';
 import 'package:udf_architecture/events.dart';
 
@@ -8,7 +9,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-  var homeViewModel = HomeViewModel();
+  var homeViewModel = Provider.of<HomeViewModel>(context );
     return
     
       ValueListenableBuilder(
@@ -60,7 +61,7 @@ homeViewModel.onEvent(
   )
 );
    },
-  decoration: InputDecoration
+  decoration: const InputDecoration
   ( hintText: 'New Title'),
  )
 
